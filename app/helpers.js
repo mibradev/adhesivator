@@ -1,6 +1,6 @@
 export const getStoredCalculationData = (setCalculationData) => {
   const storedCalculationData = localStorage.getItem(
-    "ADHESIVATOR_CALCULATION_DATA"
+    "ADHESIVATOR_CALCULATION_DATA",
   );
   if (storedCalculationData)
     setCalculationData(JSON.parse(storedCalculationData));
@@ -9,7 +9,7 @@ export const getStoredCalculationData = (setCalculationData) => {
 export const storeCalculationData = (calculationData) => {
   localStorage.setItem(
     "ADHESIVATOR_CALCULATION_DATA",
-    JSON.stringify(calculationData)
+    JSON.stringify(calculationData),
   );
 };
 

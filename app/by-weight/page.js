@@ -15,7 +15,7 @@ import {
 
 export default function ByWeight() {
   const [calculationData, setCalculationData] = useState(
-    initialCalculationData
+    initialCalculationData,
   );
 
   useEffect(() => {

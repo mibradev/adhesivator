@@ -15,7 +15,7 @@ import {
 
 export default function ByLength() {
   const [calculationData, setCalculationData] = useState(
-    initialCalculationData
+    initialCalculationData,
   );
 
   useEffect(() => {
