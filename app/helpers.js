@@ -37,6 +37,11 @@ export const calculateDataByLength = (calculationData) => {
   const roundedCost = Math.ceil(cost * 100) / 100;
   const price = roundedCost * (1 + 0.05);
   const roundedPrice = Math.ceil(price / 5) * 5;
+  calculationData.weightOfColumn = (
+    (calculationData.weightOfRoll / numberOfProducts +
+      (calculationData.weightOfCore / 1000) * calculationData.numberOfReels) /
+    calculationData.numberOfColumns
+  ).toFixed(3);
   return [roundedCost, roundedPrice];
 };
 
@@ -58,5 +63,9 @@ export const calculateDataByWeight = (calculationData) => {
   const roundedCost = Math.ceil(cost * 100) / 100;
   const price = roundedCost * (1 + 0.05);
   const roundedPrice = Math.ceil(price / 5) * 5;
+  calculationData.lengthOfReel = (
+    ((4000 / (190 / weightOfAdhesive)) * 30) /
+    calculationData.numberOfReels
+  ).toFixed(3);
   return [roundedCost, roundedPrice];
 };

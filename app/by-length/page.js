@@ -67,6 +67,18 @@ export default function ByLength() {
         />
       </div>
       <div className="space-y-2">
+        <Label>عدد الأعمدة</Label>
+        <InputNumber
+          defaultValue={calculationData.numberOfColumns}
+          onChange={(e) =>
+            setCalculationData({
+              ...calculationData,
+              numberOfColumns: Number(e.target.value),
+            })
+          }
+        />
+      </div>
+      <div className="space-y-2">
         <Label>وزن الرول</Label>
         <InputNumber
           defaultValue={calculationData.weightOfRoll}
