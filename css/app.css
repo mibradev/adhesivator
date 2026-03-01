@@ -1,0 +1,14 @@
+body > header,
+body > main,
+body footer {
+    max-width: 480px;
+}
+body > header > h1 {
+    text-align: center;
+}
+body > footer {
+    text-align: center;
+    background-color: var(--pico-primary-background);
+    position: sticky;
+    bottom: 0;
+}

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="color-scheme" content="light dark" />
+        <title>Adhesivator</title>
+        <meta
+            name="description"
+            content="Calculate the cost of adhesive tapes"
+        />
+        <link rel="stylesheet" href="css/pico.classless.jade.min.css?v=2.1.1" />
+        <link rel="stylesheet" href="css/app.css?v=1.0.0" />
+        <script defer src="js/app.js?v=1.0.0"></script>
+        <script defer src="js/alpinejs-persist.js?v=3.15.0"></script>
+        <script defer src="js/alpinejs.js?v=3.15.0"></script>
+    </head>
+    <body x-data="adhesivator($persist)">
+        <header>
+            <h1>Adhesivator</h1>
+        </header>
+        <main>
+            <form @submit.prevent>
+                <label>
+                    <span>طول البكرة</span>
+                    <input
+                        x-model.number="data.lengthOfReel"
+                        type="number"
+                        min="0"
+                        @input="calculations.byLength = true"
+                    />
+                </label>
+                <label>
+                    <span>عرض البكرة</span>
+                    <input
+                        x-model.number="data.widthOfReel"
+                        type="number"
+                        min="0"
+                    />
+                </label>
+                <label>
+                    <span>وزن العمود</span>
+                    <input
+                        x-model.number="data.weightOfColumn"
+                        type="number"
+                        min="0"
+                        @input="calculations.byLength = false"
+                    />
+                </label>
+                <label>
+                    <span>عدد البكرات</span>
+                    <input
+                        x-model.number="data.numberOfReels"
+                        type="number"
+                        min="0"
+                    />
+                </label>
+                <label>
+                    <span>عدد الأعمدة</span>
+                    <input
+                        x-model.number="data.numberOfColumns"
+                        type="number"
+                        min="0"
+                    />
+                </label>
+                <label>
+                    <span>وزن الرول</span>
+                    <input
+                        x-model.number="data.weightOfRoll"
+                        type="number"
+                        min="0"
+                    />
+                </label>
+                <label>
+                    <span>وزن الكور</span>
+                    <input
+                        x-model.number="data.weightOfCore"
+                        type="number"
+                        min="0"
+                    />
+                </label>
+                <label>
+                    <span>سعر السلوتيب</span>
+                    <input
+                        x-model.number="data.priceOfAdhesive"
+                        type="number"
+                        min="0"
+                    />
+                </label>
+                <label>
+                    <span>سعر الكور</span>
+                    <input
+                        x-model.number="data.priceOfCore"
+                        type="number"
+                        min="0"
+                    />
+                </label>
+                <label>
+                    <span>تكلفة الكرتونة</span>
+                    <input
+                        x-model.number="data.costOfCarton"
+                        type="number"
+                        min="0"
+                    />
+                </label>
+                <label>
+                    <span>تكلفة الشرينك</span>
+                    <input
+                        x-model.number="data.costOfShrink"
+                        type="number"
+                        min="0"
+                    />
+                </label>
+                <label>
+                    <span>تكلفة المصنعية</span>
+                    <input
+                        x-model.number="data.costOfWorkmanship"
+                        type="number"
+                        min="0"
+                    />
+                </label>
+                <label>
+                    <span>تكلفة النقل</span>
+                    <input
+                        x-model.number="data.costOfTransportation"
+                        type="number"
+                        min="0"
+                    />
+                </label>
+            </form>
+        </main>
+        <footer x-text="result">
+            <output>0</output>
+        </footer>
+    </body>
+</html>
